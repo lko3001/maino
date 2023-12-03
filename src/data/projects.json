@@ -1,0 +1,59 @@
+[
+  {
+    "image": "https://unsplash.it/500",
+    "title": "Panocea",
+    "github": "https://github.com/lko3001/Panocea",
+    "website": "https://panocea.vercel.app/",
+    "description": "Panocea is a website to help you achieve your every-day tasks such as note taking, to-do lists and more. To make these kind of CRUD operations I used Prisma and since I wanted to keep the design really clean and 'cold', I chose to use an UI library called ShadCN. I also chose to use Zod for server side form validation. To take notes, I used a WYSIWYG editor called Tiptap.dev, which then outputs the text as a JSON, and it gets saved in the database, with a reference to the user, who logged with NextAuth trough one of the providers",
+    "skills": [
+      "Progressive Web Application",
+      "Next.Js",
+      "React",
+      "TypeScript",
+      "Prisma",
+      "Tiptap",
+      "Tailwind CSS",
+      "Zod",
+      "Next Auth"
+    ]
+  },
+  {
+    "image": "https://unsplash.it/500",
+    "title": "Boxed Water",
+    "github": "https://github.com/lko3001/Boxed-Water",
+    "website": "https://landing-boxedwater.vercel.app",
+    "description": "'Boxed Water' is a landing page for a fictional eco-friendly bottled water company. I chose NextJS to build this website to improve image optimization and most importantly make it scalable for the future. I used GSAP to make some scroll based animations and I styled the website with Tailwind",
+    "skills": [
+      "Next.Js",
+      "React",
+      "Tailwind CSS",
+      "TypeScript",
+      "GSAP",
+      "React Icons"
+    ]
+  },
+  {
+    "image": "https://unsplash.it/500",
+    "title": "IQ Island",
+    "github": "https://github.com/lko3001/IQ-Island",
+    "website": "https://iq-island.vercel.app/",
+    "description": "IQ Island is a fun and challenging web quiz app where you can test your intelligence and see how you rank among the other players. To create the ranking board I used Prisma as an ORM to help me with CRUD operations, Typescript helped me keep the code clean and prevent most bugs from happening. To create different types of buttons I used the CVA library, which works perfectly with tailwind preventing eventual overlapping of classes that may cause bugs",
+    "skills": [
+      "Next.Js",
+      "React",
+      "TypeScript",
+      "Prisma",
+      "Class Variance Authority",
+      "React Icons",
+      "Tailwind CSS"
+    ]
+  },
+  {
+    "image": "https://unsplash.it/500",
+    "title": "This portfolio",
+    "github": "https://github.com/lko3001/Panocea",
+    "website": "#",
+    "description": "The portfolio you're seeing right now was made using Astro. I made this choice to keep the website very lightweight and ship to the client very little Javascript by rendering the pages on the server by default. I didn't want to use a CSS library like Tailwind as it might have slowed down the site, instead, I used plain CSS to keep it as barebones as possible",
+    "skills": ["Astro", "HTML", "CSS", "Typescript"]
+  }
+]

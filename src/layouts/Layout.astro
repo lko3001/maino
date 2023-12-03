@@ -1,0 +1,209 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" data-theme="dark">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+		<div id="cursor"></div>
+	</body>
+</html>
+<style is:global>
+	@font-face {
+		font-family: 'Geist Mono';
+		src: url('/fonts/Geist.Mono/GeistMonoVariableVF.ttf');
+		font-weight: normal;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: 'Geist';
+		src: url('/fonts/Geist/GeistVariableVF.ttf');
+		font-weight: normal;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: 'ClashDisplay';
+		src: url('/fonts/ClashDisplay-Variable.ttf');
+		font-weight: normal;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	:root {
+		--dark-fg: #c9c6be;
+		--dark-bg: #13140f;
+		--dark-accent: #c3ce5e;
+		--light-fg: #1c1c17;
+		--light-bg: #fcf9f0;
+		--light-accent: #1c1c17;
+		--font-accent: Geist Mono;
+		--font-body: Geist;
+	}
+
+	::selection {
+		background-color: var(--fg);
+		color: var(--bg);
+	}
+
+	html[data-theme="dark"] {
+		--fg: var(--dark-fg);
+		--bg: var(--dark-bg);
+		--accent: var(--dark-accent);
+	}
+
+
+	html[data-theme="light"] {
+		--fg: var(--light-fg);
+		--bg: var(--light-bg);
+		--accent: var(--light-accent);
+	}
+
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		font-weight: 400;
+	}
+
+	body,html {
+		scroll-behavior: smooth;
+		scroll-snap-type: y mandatory;
+	}
+
+	* {
+		cursor: none;
+	}
+
+	body {
+		color: var(--fg);
+		background-color: var(--bg);
+		font-family: var(--font-body);
+	}
+
+	h1,h2,h3,button, a {
+		font-family: var(--font-accent);
+		color: inherit;
+	}
+
+	#cursor {
+		position: fixed;
+		height: 1rem;
+		width: 1rem;
+		top: 0;
+		background-color: hsl(0, 100%, 50%, 0);
+		backdrop-filter: invert(1);
+		translate: -50% -50%;
+		pointer-events: none;
+		transition: scale 300ms;
+		transition-timing-function: cubic-bezier(0.64, 0.57, 0.67, 1.53);
+	}
+
+	body:has(.btn:hover) #cursor,
+	body:has(a:hover) #cursor {
+		scale: 3;
+	}
+
+	.btn {
+		padding: 1rem 1.5rem;
+		transition: background-color 100ms ease-in-out,
+					color 100ms ease-in-out,
+					scale 30ms ease-in-out;
+		text-transform: uppercase;
+		text-decoration: none;
+		display: inline-block;
+		text-align: center;
+	}
+
+	.btn:active {
+		scale: 0.95;
+	}
+
+	.btn-primary {
+		background-color: var(--fg);
+		outline: 2px solid var(--fg);
+		outline-offset: -2px;
+		color: var(--bg);
+	}
+
+	.btn-primary:hover, .btn-primary:hover svg {
+		background-color: transparent;
+		color: var(--fg);
+		fill: var(--fg)
+	}
+
+	.btn-ghost:hover {
+		text-decoration: underline;
+	}
+
+	.skills {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		margin-bottom: 1rem;
+	}
+	.skills li {
+	margin: 0;
+	padding: 0.3rem 0.6rem;
+	font-family: var(--font-accent);
+	text-transform: uppercase;
+	font-size: 0.9rem;
+
+	}
+
+	p {
+		line-height: 1.5rem;
+	}
+
+	@media (max-width: 1250px) {
+		#cursor {
+			display: none;
+		}
+		.btn-full-width {
+			width: 100%;
+		}
+	}
+
+	@keyframes pulse {
+		from {
+			scale: 1;
+		}
+		80% {
+			scale: 3;
+		}
+		100% {
+			scale: 2;
+		}
+	}
+
+</style>
+
+<script>
+	const cursor = document.querySelector('#cursor') as HTMLElement
+	window.addEventListener('mousemove', (e) => {
+		if(!cursor) return
+
+		cursor.style.left = `${e.clientX}px`
+		cursor.style.top = `${e.clientY}px`
+
+	})
+</script>

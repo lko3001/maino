@@ -1,0 +1,94 @@
+---
+const skills = [
+    "HTML",
+    "CSS",
+    "Javascript",
+    "Typescript",
+    "React",
+    "NextJS",
+    "Tailwind",
+    "Next Auth",
+    "SCSS",
+]
+---
+<section id="about-me">
+    <div class="left">
+    <h2>About me</h2>
+    <p>My name is Maino Lorenzo. I'm a junior web developer focused on front-end development, who loves
+    building beautiful and functional websites. As a developer, I always try to stay up to date with latest technologies,
+    learning new skills and improving myself and most importantly my code.</p>
+            </div>
+    <div class="right">
+        <div class="skills-container">
+        <h3>My skills</h3>
+        <ul class="skills">
+            {skills.map(skill => <li>{skill}</li>)}
+        </ul>
+        </div>
+        <div>
+        <h3><a href="#">Curriculum</a></h3>
+        </div>
+    </div>
+</section>
+
+<style>
+    section {
+        scroll-snap-align: center;
+        padding: 4rem;
+        display: flex;
+        gap: 1rem;
+    }
+
+    .left, .right {
+        width: 100%;
+    }
+
+    .right {
+        text-align: end;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    h3 {
+        margin-bottom: 1rem;
+        font-size: 2rem;
+    }
+
+    .skills {
+        max-width: 20rem;
+        justify-content: end;
+    }
+    .skills-container {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+    }
+
+    @media (max-width: 1250px) {
+        section {
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .left {
+            margin-bottom: 3rem;
+        }
+
+        .skills-container {
+            margin-bottom: 1rem;
+        }
+
+        h2 { font-size: 1.6rem; }
+        h3 { font-size: 1.3rem; }
+
+    }
+
+</style>

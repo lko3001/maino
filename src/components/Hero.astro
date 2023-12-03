@@ -1,0 +1,49 @@
+<header>
+    <div>
+        <h1>Lorenzo Maino</h1>
+        <p class="subtitle">Never stop learning</p>
+    </div>
+    <div class="links">
+        <a href="#0" class="btn btn-primary btn-full-width">Projects</a>
+        <a href="#about-me" class="btn btn-ghost btn-full-width">About me</a>
+    </div>
+</header>
+
+<style>
+	h1 {
+        font-size: 4rem;
+    }
+
+    .subtitle {
+        font-family: var(--font-accent);
+        text-transform: uppercase;
+    }
+
+    header {
+        scroll-snap-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 4rem;
+        min-height: 100svh;
+    }
+
+    .links {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    @media (max-width: 1250px) {
+        header {
+            padding: 1rem;
+        }
+        .links {
+            flex-direction: column;
+        }
+        h1 {
+            font-size: 2rem;
+        }
+    }
+
+</style>

@@ -1,0 +1,142 @@
+---
+import projects from "../data/projects.json"
+import Hero from '../components/Hero.astro';
+import Description from '../components/Description.astro';
+import Layout from '../layouts/Layout.astro';
+import About from '../components/About.astro';
+---
+
+<Layout title="Lorenzo Maino">
+	<Hero />
+	<main>
+		<section>
+			<div class="text">
+				{projects.map(( el, index ) => (
+					<Description index={index} skills={el.skills} image={el.image} title={el.title} description={el.description} github={el.github} website={el.website}   />
+				))}
+			</div>
+			<div class="image-container">
+				{projects.map(( el, index ) => (
+					<img src={el.image} class="image-right" data-index={index} />
+				))}
+				<a class="image-link" href="Ciao"></a>
+			</div>
+		</section>
+	</main>
+	<About />
+</Layout>
+
+<style>
+	section {
+		min-height: 100svh;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.text-container {
+		padding: 2rem;
+		min-height: 100svh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.subtitle {
+		text-transform: uppercase;
+	}
+
+	.image-container {
+		height: 100svh;
+		position: sticky;
+		top: 0;
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 100svh;
+	}
+
+	.image-right {
+		grid-column: span 1/2;
+		grid-row: span 1/2;
+		object-fit: cover;
+		opacity: 0;
+		transition: opacity 200ms ease-in-out;
+	}
+
+	img {
+		width: 100%;
+		height: 100%;
+	}
+
+	.image-right:first-child {
+		opacity: 1;
+	}
+
+	.image-link {
+		position: absolute;
+		inset: 0;
+	}
+
+	.text .image-container {
+		display: none;
+	}
+
+	@media (max-width: 1250px) {
+		section {
+			min-height: auto;
+			display: block;
+		}
+
+		.text-container {
+			display: block;
+			min-height: auto;
+			padding: 1rem;
+		}
+
+		.image-container {
+			display: none;
+		}
+
+		.text .image-container {
+			height: auto;
+			position: static;
+			display: block;
+		}
+
+		.text .image-container img {
+			height: auto;
+			aspect-ratio: 16/9;
+		}
+	}
+
+</style>
+
+<script>
+	let firstTime = true
+
+	function Observe(entries: IntersectionObserverEntry[], observer: IntersectionObserver) {
+		entries.forEach(entry => {
+
+			const target = entry.target as HTMLElement
+			const index = Number(target.dataset.index)
+			const image = document.querySelector(`img[data-index="${index}"]`) as HTMLElement
+			if(!image) return
+
+			console.log(entry.isIntersecting)
+
+			if(!index && firstTime) {
+				firstTime = false
+				return
+			}
+
+			image.style.opacity = String(1 * Number(entry.isIntersecting))
+		})
+	}
+
+	const sections = document.querySelectorAll(".text-container")
+
+	sections.forEach(section => {
+		const options = {rootMargin: '-50%'}
+		const observer = new IntersectionObserver(Observe, options)
+		observer.observe(section!)
+	})
+
+
+</script>

@@ -1,0 +1,31 @@
+<footer>
+    <button class="btn btn-ghost" id="system">system</button>
+    <button class="btn btn-ghost" id="light">light</button>
+    <button class="btn btn-ghost" id="dark">dark</button>
+</footer>
+
+<style>
+    footer {
+        padding: 1rem;
+        text-align: center;
+    }
+</style>
+
+<script>
+    const system = document.querySelector("#system")
+    const light = document.querySelector("#light")
+    const dark = document.querySelector("#dark")
+
+    function changeTheme(theme: string) {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme)
+    }
+
+    system.addEventListener('click', () => changeTheme('system'))
+    dark.addEventListener('click', () => changeTheme('dark'))
+    light.addEventListener('click', () => changeTheme('light'))
+
+    const theme = localStorage.getItem("theme")
+    changeTheme(theme)
+
+</script>

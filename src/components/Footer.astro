@@ -21,11 +21,11 @@
         localStorage.setItem('theme', theme)
     }
 
-    system.addEventListener('click', () => changeTheme('system'))
-    dark.addEventListener('click', () => changeTheme('dark'))
-    light.addEventListener('click', () => changeTheme('light'))
+    if(system) { system.addEventListener('click', () => changeTheme('system')) }
+    if(light) { light.addEventListener('click', () => changeTheme('light')) }
+    if(dark) { dark.addEventListener('click', () => changeTheme('dark')) }
 
     const theme = localStorage.getItem("theme")
-    changeTheme(theme)
+    changeTheme(theme || "system")
 
 </script>

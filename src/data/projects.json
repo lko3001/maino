@@ -1,6 +1,6 @@
 [
   {
-    "image": "/images/panocea.png",
+    "image": "/images/panocea.webp",
     "title": "Panocea",
     "github": "https://github.com/lko3001/Panocea",
     "website": "https://panocea.vercel.app/",
@@ -18,7 +18,7 @@
     ]
   },
   {
-    "image": "/images/boxedwater.png",
+    "image": "/images/boxedwater.webp",
     "title": "Boxed Water",
     "github": "https://github.com/lko3001/Boxed-Water",
     "website": "https://landing-boxedwater.vercel.app",
@@ -33,7 +33,7 @@
     ]
   },
   {
-    "image": "/images/iq-island.png",
+    "image": "/images/iq-island.webp",
     "title": "IQ Island",
     "github": "https://github.com/lko3001/IQ-Island",
     "website": "https://iq-island.vercel.app/",
@@ -49,7 +49,7 @@
     ]
   },
   {
-    "image": "/images/portfolio.png",
+    "image": "/images/portfolio.webp",
     "title": "Portfolio",
     "github": "https://github.com/lko3001/maino",
     "website": "#",

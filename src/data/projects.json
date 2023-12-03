@@ -1,6 +1,6 @@
 [
   {
-    "image": "https://unsplash.it/500",
+    "image": "/images/panocea.png",
     "title": "Panocea",
     "github": "https://github.com/lko3001/Panocea",
     "website": "https://panocea.vercel.app/",
@@ -18,7 +18,7 @@
     ]
   },
   {
-    "image": "https://unsplash.it/500",
+    "image": "/images/boxedwater.png",
     "title": "Boxed Water",
     "github": "https://github.com/lko3001/Boxed-Water",
     "website": "https://landing-boxedwater.vercel.app",
@@ -33,7 +33,7 @@
     ]
   },
   {
-    "image": "https://unsplash.it/500",
+    "image": "/images/iq-island.png",
     "title": "IQ Island",
     "github": "https://github.com/lko3001/IQ-Island",
     "website": "https://iq-island.vercel.app/",
@@ -49,9 +49,9 @@
     ]
   },
   {
-    "image": "https://unsplash.it/500",
-    "title": "This portfolio",
-    "github": "https://github.com/lko3001/Panocea",
+    "image": "/images/portfolio.png",
+    "title": "Portfolio",
+    "github": "https://github.com/lko3001/maino",
     "website": "#",
     "description": "The portfolio you're seeing right now was made using Astro. I made this choice to keep the website very lightweight and ship to the client very little Javascript by rendering the pages on the server by default. I didn't want to use a CSS library like Tailwind as it might have slowed down the site, instead, I used plain CSS to keep it as barebones as possible",
     "skills": ["Astro", "HTML", "CSS", "Typescript"]

@@ -12,7 +12,7 @@ interface Props {
 
 const {image, title, description, index, skills, github, website} = Astro.props;
 ---
-<div id={String(index)} class="text-container" data-index={index}>
+<div id={String(index)} class="text-container scroll-snap" data-index={index}>
 	<div class="image-container">
 		<Image src={image} alt={title} height="1500" width="1500" />
 	</div>
@@ -46,7 +46,6 @@ p { margin-bottom: 1rem; }
 	justify-content: center;
 	align-items: center;
 	margin: 0 auto;
-	scroll-snap-align: center;
 }
 
 .image-container {
